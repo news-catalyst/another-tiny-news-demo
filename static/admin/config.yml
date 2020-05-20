@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: news-catalyst/tiny-news-demo
+  
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: articles
+    identifier_field: headline
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: headline, label: Headline }
+      - { name: body, label: Body, widget: markdown }
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
